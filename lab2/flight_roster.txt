@@ -1,0 +1,26 @@
+Flight Roster
+=============
+
+Context: An airline reservation system
+
+Each seat has a unique name, like "17C" and is either in business class or
+economy. Passengers have booking IDs (a mix of letters and numbers). When they
+book a seat, they request their preferred class (business or economy) and are
+given any seat in that class. If the class is full, their booking is
+unsuccessful. This airline gives passengers no choice about their specific seat.
+We want to be able to report on how full a flight is: the percentage of seats
+that are booked in economy, in business class, and overall
+
+
+- Seat 
+    - name (String)
+    - class (business, or economy)
+
+- Passenger 
+    - booking ids (string)
+    - book action, books some seat of some class, returns whether booking is succesful or not. 
+
+- Flight 
+    - capacity_economy  
+    - capacity_business 
+    - method for getting how full a flight is for overall, eco, and business
