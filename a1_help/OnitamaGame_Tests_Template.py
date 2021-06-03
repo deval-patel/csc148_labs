@@ -24,9 +24,28 @@ def assert_deeply(expected, actual):
 
 
 # Test cases 
+# Constatns for board states
+state1 = [['x', ' ', 'X', 'x', 'x'],
+    [' ', ' ',' ',' ',' ',],
+    [' ', ' ',' ','x',' ',],
+    [' ', 'y',' ',' ',' ',],
+    ['y', ' ', 'Y', 'y', 'y']]
+state2 = [['x', ' ', 'X', 'x', 'x'],
+    [' ', ' ',' ',' ',' ',],
+    [' ', ' ',' ','x',' ',],
+    [' ', 'y',' ',' ',' ',],
+    ['y', ' ', ' ', 'y', 'y']]
+state3 = []
+state4 = []
+state5 = []
+state6 = []
+def test_something_else():
+    onitama = OnitamaGame()
+    onitama.set_board(state1)
 
 def test_move():
     onitama = OnitamaGame()
+    onitama.set_board(state1)
     # Initial state of the board.
     # [x, x, X, x, x]
     # [' ', ' ',' ',' ',' ',]
@@ -57,8 +76,6 @@ def test_move():
     move(board,0, 0, 1, 0 )
     assert board == onitama.get_board()
     # alternative
-    assert str(board) == str(onitama.get_board())]
+    assert str(board) == str(onitama.get_board())
     # Check styles were exchanged properly.
     # Check its other players turn
-    
-    
