@@ -165,13 +165,13 @@ class RecursiveList:
         Precondition: index >= 0.
         Raise IndexError if index is >= the length of this list.
 
-        Recursive Structure:
+        Recursive Structure [1, 2, 3]:
         _first = 1
         _rest = [2, 3]
             _first = 2
             _rest = [3]
                 _first = 3
-                _rest = None
+                _rest = None / []
 
         >>> lst = RecursiveList([1, 2, 3])
         >>> lst[0] = 100 # Equivalent to lst.__setitem__(0, 100)
@@ -322,7 +322,7 @@ class RecursiveList:
             # Apply f to the first element and make a new list to return
             rl = RecursiveList([f(self._first)])
             # Map the rest of the list and set it to rl's _rest
-            rl._rest = self._rest.map(f)
+            rl._rest = self._rest.map(f)  # recursive call
             return rl
 
 

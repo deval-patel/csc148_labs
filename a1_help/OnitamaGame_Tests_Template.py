@@ -4,6 +4,8 @@ from typing import List
 from pieces import Pieces
 
 # Helpers for testing
+
+
 def move(board: List[List[str]], row_o: int, col_o: int, row_d: int, col_d: int):
     """
     Move a token on the board.
@@ -22,26 +24,28 @@ def assert_deeply(expected, actual):
         assert expected[i] == actual[i]
 
 
-
-# Test cases 
+# Test cases
 # Constatns for board states
 state1 = [['x', ' ', 'X', 'x', 'x'],
-    [' ', ' ',' ',' ',' ',],
-    [' ', ' ',' ','x',' ',],
-    [' ', 'y',' ',' ',' ',],
-    ['y', ' ', 'Y', 'y', 'y']]
+          [' ', ' ', ' ', ' ', ' ', ],
+          [' ', ' ', ' ', 'x', ' ', ],
+          [' ', 'y', ' ', ' ', ' ', ],
+          ['y', ' ', 'Y', 'y', 'y']]
 state2 = [['x', ' ', 'X', 'x', 'x'],
-    [' ', ' ',' ',' ',' ',],
-    [' ', ' ',' ','x',' ',],
-    [' ', 'y',' ',' ',' ',],
-    ['y', ' ', ' ', 'y', 'y']]
+          [' ', ' ', ' ', ' ', ' ', ],
+          [' ', ' ', ' ', 'x', ' ', ],
+          [' ', 'y', ' ', ' ', ' ', ],
+          ['y', ' ', ' ', 'y', 'y']]
 state3 = []
 state4 = []
 state5 = []
 state6 = []
+
+
 def test_something_else():
     onitama = OnitamaGame()
     onitama.set_board(state1)
+
 
 def test_move():
     onitama = OnitamaGame()
@@ -55,7 +59,7 @@ def test_move():
 
     board = onitama.get_board()
 
-    # Make some moves 
+    # Make some moves
     # Currently it is P1s turn
     # Invalid moves
     # Bad style
@@ -73,7 +77,7 @@ def test_move():
     # [y, y, Y, y, y]
 
     # Checxk that the token actually moved properly.
-    move(board,0, 0, 1, 0 )
+    move(board, 0, 0, 1, 0)
     assert board == onitama.get_board()
     # alternative
     assert str(board) == str(onitama.get_board())
