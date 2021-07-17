@@ -309,6 +309,9 @@ class BinarySearchTree:
         - new_root.Right becomes old_root.Left
         - Old Root becomes The right of the new root (old left)
         """
+        # If this tree or left subtree is empty, then we cannot do right rotation
+        if self.is_empty() or self._left.is_empty():
+            return
         # Step 1: Store the new root in a var
         new_root = self._left
         # Step 2: Store the old root in a var, update the current root
@@ -370,6 +373,9 @@ class BinarySearchTree:
         - Right.Left becomes old_root.Right
         - Old Root becomes The left of the new root (old left)
         """
+        # If this tree or right subtree is empty, then we cannot do left rotation
+        if self.is_empty() or self._right.is_empty():
+            return
         # Step 1: Store the new root in a var
         new_root = self._right
         # Step 2: Store the old root in a var, update the current root
@@ -387,7 +393,7 @@ class BinarySearchTree:
         print(self._root)
         q.enqueue(self._left)
         q.enqueue(self._right)
-        # Go through the queue and keep popping bsts 
+        # Go through the queue and keep popping bsts
         while not q.is_empty():
             bst = q.dequeue()
             if bst._root:
