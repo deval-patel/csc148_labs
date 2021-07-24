@@ -173,7 +173,6 @@ class BinarySearchTree:
     # ------------------------------------------------------------------------
     # Task 1
     # ------------------------------------------------------------------------
-    # TODO: implement this method!
     def height(self) -> int:
         """Return the height of this BST.
 
@@ -194,7 +193,6 @@ class BinarySearchTree:
         else:
             return 1 + max(self._left.height(), self._right.height())
 
-    # TODO: implement this method!
     def items_in_range(self, start: Any, end: Any) -> List:
         """Return the items in this BST between <start> and <end>, inclusive.
 
@@ -235,7 +233,6 @@ class BinarySearchTree:
     # ------------------------------------------------------------------------
     # Task 2
     # ------------------------------------------------------------------------
-    # TODO: implement this method!
 
     def insert(self, item: Any) -> None:
         """Insert <item> into this BST, maintaining the BST property.
