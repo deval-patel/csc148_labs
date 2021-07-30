@@ -245,6 +245,30 @@ def find_runs2(lst: list) -> List[Tuple[int, int]]:
 
     return runs
 
+    # Alternative Solution
+    # runs = []
+    # # Keep track of the start and end points of a run.
+    # run_start = 0
+    # run_end = 1
+
+    # status = str(lst[1] - lst[0])
+
+    # while run_end < len(lst):
+    #     if ('-' in str(lst[run_end] - lst[run_end - 1]) and '-' not in status) or \
+    #         ('-' not in str(lst[run_end] - lst[run_end - 1]) and '-' in status):
+    #         if '-' not in str(lst[run_end] - lst[run_end - 1]) and '-' in status:
+    #             mergesort2(lst, run_start, run_end)
+    #         runs.append((run_start, run_end))
+    #         run_start = run_end
+    #         if run_end + 1 < len(lst):
+    #             status = str(lst[run_end + 1] - lst[run_end])
+    #     run_end  += 1
+        
+    # if run_start != run_end:
+    #     runs.append((run_start, run_end))
+    #     mergesort2(lst, run_start, run_end)
+
+    # return runs
 
 ###############################################################################
 # Task 4: Minimum run length
