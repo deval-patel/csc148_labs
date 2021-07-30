@@ -387,8 +387,4 @@ def timsort2(lst: list) -> None:
 
 if __name__ == '__main__':
     import doctest
-    # doctest.testmod()
-    lst = [1, 4, 7, 10, 2, 5]
-    _merge2(lst, 0, 4, 6)
-    print(lst)
-    print([1, 2, 4, 5, 7, 10] == lst)
+    doctest.testmod()
