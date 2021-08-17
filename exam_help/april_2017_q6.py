@@ -1,10 +1,12 @@
 class BTNode:
     """A node in a binary tree"""
 
-    def __init__(self, item, left=None, right=None):
+    def __init__(self, item, left=None, right=None, parent=None, depth=0):
         self.item = item
         self.left = left
         self.right = right
+        self.parent = parent
+        self.depth = depth
 
 
 class LLNode:
@@ -52,6 +54,22 @@ def preorder(root: BTNode) -> LLNode:
         # Now this is the last linked list node in our left subtrees recursive call
         curr.link = right_node
         return node
+
+
+def deepest_ancestor(node1: BTNode, node2: BTNode):
+    # Base case, parents are equal or one node is the other nodes parent
+    if node1 == node2 or node2 == node1.parent:
+        return node2
+    elif node1 == node2.parent:
+        return node1
+    elif node1.parent == node2.parent:
+        return node1.parent
+    else:
+        # Recurse on the node with bigger depth
+        if node1.depth >= node2.depth:
+            return deepest_ancestor(node1.parent, node2)
+        else:
+            return deepest_ancestor(node1, node2.parent)
 
 
 if __name__ == '__main__':
