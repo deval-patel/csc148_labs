@@ -55,6 +55,8 @@ def preorder(root: BTNode) -> LLNode:
         curr.link = right_node
         return node
 
+# Q4
+
 
 def deepest_ancestor(node1: BTNode, node2: BTNode):
     # Base case, parents are equal or one node is the other nodes parent
