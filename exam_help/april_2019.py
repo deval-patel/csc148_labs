@@ -1,5 +1,5 @@
-from typing import Dict, Any, List
 from __future__ import annotations
+from typing import Dict, Any, List
 
 
 class Module:
@@ -82,3 +82,34 @@ class ListComprehension(Expr):
             if self.cond.evaluate(env):
                 lst.append(self.build.evaluate(env))
         return lst
+
+
+# Q5
+def reverse_list(lst: List[Any], start: int, end: int) -> None:
+    """
+    Reverse the list from start - end (inclusive).
+    """
+    if start >= end:
+        return
+    else:
+        # Swap start and end
+        lst[start], lst[end] = lst[end], lst[start]
+        reverse_list(lst, start + 1, end - 1)
+
+
+if __name__ == '__main__':
+    lst = [1, 2, 3, 4, 5]
+    reverse_list(lst, 0, 4)
+    assert lst == [5, 4, 3, 2, 1]
+    lst = [1, 2, 3, 4, 5]
+    reverse_list(lst, 0, 3)
+    assert lst == [4, 3, 2, 1, 5]
+    lst = [1, 2, 3, 4, 5]
+    reverse_list(lst, 0, 0)
+    assert lst == [1, 2, 3, 4, 5]
+    lst = [1, 2, 3, 4, 5]
+    reverse_list(lst, 1, 3)
+    assert lst == [1, 4, 3, 2, 5]
+    lst = [1, 2, 3, 4, 5]
+    reverse_list(lst, 1, 2)
+    assert lst == [1, 3, 2, 4, 5]

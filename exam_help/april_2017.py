@@ -23,6 +23,8 @@ class LLNode:
             s += str(self.link)
         return s
 
+# Q6
+
 
 def preorder(root: BTNode) -> LLNode:
     """Return the first node in a linked list that contains every value from the
